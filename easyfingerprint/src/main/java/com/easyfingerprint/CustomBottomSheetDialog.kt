@@ -4,9 +4,8 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
-import android.graphics.drawable.ShapeDrawable
-import android.os.CountDownTimer
 import android.os.Handler
+import android.support.annotation.ColorRes
 import android.support.design.widget.BottomSheetDialog
 import android.support.v4.content.ContextCompat
 import android.view.View
@@ -14,12 +13,17 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 
+/**
+ * created at 26/07/2018
+ * @author rafaelbarbosatec
+ * @version 1.0
+ *
+ */
 class CustomBottomSheetDialog(val context: Activity?){
 
     private val STATE_SET_ON = intArrayOf(R.attr.state_on, -R.attr.state_off, -R.attr.state_error)
     private val STATE_SET_OFF = intArrayOf(-R.attr.state_on, R.attr.state_off, -R.attr.state_error)
     private val STATE_SET_ERROR = intArrayOf(-R.attr.state_on, -R.attr.state_off, R.attr.state_error)
-
 
     private var bottomSheetDialog: BottomSheetDialog? = null
     private var listern: CustomBottomSheetListern? = null
@@ -40,6 +44,9 @@ class CustomBottomSheetDialog(val context: Activity?){
         }
     }
 
+    /**
+     * Method used to initialize CustonDialog
+     */
     @SuppressLint("InflateParams")
     private fun initDialog() {
         val view = context?.layoutInflater?.inflate(R.layout.bottom_sheet_finger_print, null)
@@ -67,37 +74,66 @@ class CustomBottomSheetDialog(val context: Activity?){
         }
     }
 
+    /**
+     * Method used to initialize listern for close and open
+     * @param listern
+     * @see CustomBottomSheetListern
+     */
     fun setListern(listern: CustomBottomSheetListern): CustomBottomSheetDialog{
         this.listern = listern
         return this
     }
 
+    /**
+     * Method used to set Tittle in BottomDialog
+     * @param tittle
+     */
     fun setTittle(tittle:String): CustomBottomSheetDialog{
         textview_tittle?.text = tittle
         return this
     }
 
+    /**
+     * Method used to set SubTittle in BottomDialog
+     * @param subTittle
+     */
     fun setSubTittle(subTittle:String): CustomBottomSheetDialog{
         textview_subtittle?.text = subTittle
         return this
     }
 
+    /**
+     * Method used to set Description in BottomDialog
+     * @param description
+     */
     fun setDescription(description:String): CustomBottomSheetDialog{
         textview_description?.text = description
         return this
     }
 
+    /**
+     * Method used to set Instruction in BottomDialog
+     * @param instruction
+     */
     fun seFingerprintInstruction(instruction:String): CustomBottomSheetDialog{
         msgInstruction = instruction
         textview_finger_touch?.text = instruction
         return this
     }
 
+    /**
+     * Method used to set error mensage when finger not reconized
+     * @param error
+     */
     fun setMsgError(error:String): CustomBottomSheetDialog{
         msgError = error
         return this
     }
 
+    /**
+     * Method used to set icon to BottomDialog
+     * @param icon
+     */
     fun setIcon(icon: Drawable?): CustomBottomSheetDialog{
 
         imageview_icon?.setImageDrawable(icon)
@@ -111,7 +147,11 @@ class CustomBottomSheetDialog(val context: Activity?){
         return this
     }
 
-    fun setColorPrimary(color:Int){
+    /**
+     * Method used to set color primary to BottomDialog
+     * @param color
+     */
+    fun setColorPrimary(@ColorRes color:Int){
         try {
 
             if (context != null){
@@ -128,6 +168,9 @@ class CustomBottomSheetDialog(val context: Activity?){
         }
     }
 
+    /**
+     * Method used to showError in customDialog
+     */
     fun showError(){
 
         if (msgError.isEmpty()){
@@ -143,11 +186,17 @@ class CustomBottomSheetDialog(val context: Activity?){
         startTimer()
     }
 
+    /**
+     * Method used to start timer tha return normal visualization
+     */
     private fun startTimer() {
         val handle = Handler()
         handle.postDelayed({ showIntructionDefault() }, 1500)
     }
 
+    /**
+     * Method used to show normal visualization
+     */
     private fun showIntructionDefault() {
 
         if (msgInstruction.isEmpty()){
@@ -163,6 +212,9 @@ class CustomBottomSheetDialog(val context: Activity?){
             imageview_finger?.setImageState(STATE_SET_ON, true)
     }
 
+    /**
+     * Method used to close dialog
+     */
     fun close() {
 
         if (bottomSheetDialog?.isShowing == true){
@@ -175,6 +227,9 @@ class CustomBottomSheetDialog(val context: Activity?){
         }
     }
 
+    /**
+     * Method used to show dialog
+     */
     fun show(){
 
         try {
@@ -196,10 +251,16 @@ class CustomBottomSheetDialog(val context: Activity?){
 
     }
 
+    /**
+     * Method used to check if dialog is showing
+     */
     fun isShowing():Boolean{
         return bottomSheetDialog?.isShowing ?: false
     }
 
+    /**
+     * Interface responsible to return if close or open dialog
+     */
     interface CustomBottomSheetListern{
         fun open()
         fun closed()
