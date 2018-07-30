@@ -10,6 +10,7 @@ import android.graphics.drawable.Drawable
 import android.os.Build
 import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyProperties
+import android.support.annotation.ColorRes
 import android.support.annotation.RequiresApi
 import android.support.v4.content.ContextCompat
 import android.support.v4.hardware.fingerprint.FingerprintManagerCompat
@@ -20,6 +21,12 @@ import javax.crypto.Cipher
 import javax.crypto.KeyGenerator
 import javax.crypto.SecretKey
 
+/**
+ * created at 26/07/2018
+ * @author rafaelbarbosatec
+ * @version 1.0
+ *
+ */
 class EasyFingerPrint(private val activity: Activity?):FingerprintManagerCompat.AuthenticationCallback(){
 
     companion object {
@@ -58,40 +65,73 @@ class EasyFingerPrint(private val activity: Activity?):FingerprintManagerCompat.
         })
     }
 
+    /**
+     * Method used to set Tittle in BottomDialog
+     * @param tittle
+     */
     fun setTittle(tittle:String): EasyFingerPrint{
         bottomSheetDialog?.setTittle(tittle)
         return this
     }
 
+    /**
+     * Method used to set SubTittle in BottomDialog
+     * @param subTittle
+     */
     fun setSubTittle(subTittle:String): EasyFingerPrint{
         bottomSheetDialog?.setSubTittle(subTittle)
         return this
     }
 
+    /**
+     * Method used to set Description in BottomDialog
+     * @param description
+     */
     fun setDescription(description:String): EasyFingerPrint{
         bottomSheetDialog?.setDescription(description)
         return this
     }
 
+    /**
+     * Method used to set error mensage when finger not reconized
+     * @param error
+     */
     fun setMsgError(error:String): EasyFingerPrint{
         bottomSheetDialog?.setMsgError(error)
         return this
     }
 
+    /**
+     * Method used to set icon to BottomDialog
+     * @param icon
+     */
     fun setIcon(icon: Drawable?): EasyFingerPrint{
         bottomSheetDialog?.setIcon(icon)
         return this
     }
-    fun setColorPrimary(color:Int): EasyFingerPrint{
+
+    /**
+     * Method used to set color primary to BottomDialog
+     * @param color
+     */
+    fun setColorPrimary(@ColorRes color:Int): EasyFingerPrint{
         bottomSheetDialog?.setColorPrimary(color)
         return this
     }
 
+    /**
+     * Method used to set litern that recieve sucess or error of the scan finger
+     * @param listern
+     */
     fun setListern(listern: ResultFingerPrintListern): EasyFingerPrint{
         this.listern = listern
         return this
     }
 
+    /**
+     * Method used to start Scan fingerPrint
+     * @param icon
+     */
     fun startScan(){
 
         if (Util.isAndroidGraterM()){
@@ -108,12 +148,19 @@ class EasyFingerPrint(private val activity: Activity?):FingerprintManagerCompat.
 
     }
 
+    /**
+     * Method used to check permission "USE_FINGERPRINT"
+     * @param icon
+     */
     private fun checkPermissionFingerPrint():Boolean {
 
         return ContextCompat.checkSelfPermission(activity!!,
                 Manifest.permission.USE_FINGERPRINT) == PackageManager.PERMISSION_GRANTED
     }
 
+    /**
+     * Method used to check permission "USE_FINGERPRINT"
+     */
     @SuppressLint("NewApi")
     private fun confFingerPrint() {
 
@@ -166,6 +213,9 @@ class EasyFingerPrint(private val activity: Activity?):FingerprintManagerCompat.
 
     }
 
+    /**
+     * Method used cancel scan FingerPrint
+     */
     fun cancelScan(){
 
         if (cancellationSignal?.isCanceled != true){
@@ -267,6 +317,9 @@ class EasyFingerPrint(private val activity: Activity?):FingerprintManagerCompat.
         Log.e(TAG,mensage)
     }
 
+    /**
+     * Interface responsible to return responce of the scan result
+     */
     interface ResultFingerPrintListern{
         fun onError(mensage: String, code:Int)
         fun onSucess(cryptoObject: FingerprintManagerCompat.CryptoObject?)
