@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">EasyFingerPrint</string>
+    <string name="text__button_cancel">Cancel</string>
+    <string name="text_default_description">In order to use the Fingerprint sensor we need your authorization first.</string>
+    <string name="text_default_tittle">Sign in</string>
+    <string name="text_default_instruction">Touch the fingerprint sensor</string>
+    <string name="text_erro_not_reconized">Not recognized</string>
+    <string name="text_default_subtittle">account@account.com.br</string>
+</resources>

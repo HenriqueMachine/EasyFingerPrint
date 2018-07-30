@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/bottom_sheet_finger"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginLeft="@dimen/default_margin"
+        android:layout_marginRight="@dimen/default_margin"
+        >
+
+        <ImageView
+            android:id="@+id/imageview_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            android:layout_marginRight="16dp"/>
+
+        <TextView
+            android:id="@+id/textview_tittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/color_text"
+            android:layout_toRightOf="@+id/imageview_icon"
+            android:text="@string/text_default_tittle"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/textview_subtittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_text"
+            android:layout_toRightOf="@+id/imageview_icon"
+            android:layout_below="@+id/textview_tittle"
+            android:text="@string/text_default_subtittle"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textview_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_text"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/default_margin"
+        android:layout_marginRight="@dimen/default_margin"
+        android:layout_marginBottom="48dp"
+        android:text="@string/text_default_description"/>
+
+    <ImageView
+        android:id="@+id/imageview_finger"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@drawable/shape_circle"
+        android:padding="14dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/textview_finger_touch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/color_text"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/text_default_instruction"/>
+
+    <Button
+        android:id="@+id/button_cancel_finger"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:gravity="left|center_vertical"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="@dimen/default_margin"
+        android:layout_marginRight="@dimen/default_margin"
+        android:textColor="@color/design_default_color_primary"
+        android:background="?selectableItemBackground"
+        android:text="@string/text__button_cancel"/>
+
+</LinearLayout>
