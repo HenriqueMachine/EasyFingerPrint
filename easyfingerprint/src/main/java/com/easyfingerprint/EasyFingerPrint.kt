@@ -102,8 +102,8 @@ class EasyFingerPrint(private val activity: Activity?):FingerprintManagerCompat.
                 listern?.onError("ADD <uses-permission android:name=\"android.permission.USE_FINGERPRINT\" /> in your AndroidManifest.xml", CODE_NOT_PERMISSION_BIOMETRIC)
             }
         }else{
-            logError("Required a Marsmallow android version or higher")
-            listern?.onError("Required a Marsmallow android version or higher", CODE_ERRO_GREATER_ANDROID_M)
+            logError(activity?.getString(R.string.text_android_marsmallow_required)!!)
+            listern?.onError(activity?.getString(R.string.text_android_marsmallow_required)!!, CODE_ERRO_GREATER_ANDROID_M)
         }
 
     }
@@ -124,20 +124,20 @@ class EasyFingerPrint(private val activity: Activity?):FingerprintManagerCompat.
                     as KeyguardManager?
 
             if (fingerprintManager?.isHardwareDetected != true){
-                logError("Fingerprint scanner not detected on device")
-                listern?.onError("Fingerprint scanner not detected on device", CODE_ERRO_HARDWARE_NOT_SUPPORTED)
+                logError(activity.getString(R.string.text_hardware_not_detected))
+                listern?.onError(activity.getString(R.string.text_hardware_not_detected), CODE_ERRO_HARDWARE_NOT_SUPPORTED)
                 return
             }
 
             if (!keyguardManager?.isKeyguardSecure!!){
-                logError("Add lock fingerprint to your phone and settings")
-                listern?.onError("Add lock fingerprint to your phone and settings", CODE_ERRO_NOT_ABLED)
+                logError(activity.getString(R.string.text_add_lock_fingerprint))
+                listern?.onError(activity.getString(R.string.text_add_lock_fingerprint), CODE_ERRO_NOT_ABLED)
                 return
             }
 
             if (!fingerprintManager!!.hasEnrolledFingerprints()){
-                logError("You must add at least 1 fingerprint to use this feature")
-                listern?.onError("You must add at least 1 fingerprint to use this feature", CODE_ERRO_NOT_FINGERS)
+                logError(activity.getString(R.string.text_add_one_finger))
+                listern?.onError(activity.getString(R.string.text_add_one_finger), CODE_ERRO_NOT_FINGERS)
                 return
             }
 

@@ -6,4 +6,8 @@
     <string name="text_default_instruction">Touch the fingerprint sensor</string>
     <string name="text_erro_not_reconized">Not recognized</string>
     <string name="text_default_subtittle">account@account.com.br</string>
+    <string name="text_android_marsmallow_required">Required a Marsmallow android version or higher</string>
+    <string name="text_hardware_not_detected">Fingerprint scanner not detected on device</string>
+    <string name="text_add_lock_fingerprint">Add lock fingerprint to your phone and settings</string>
+    <string name="text_add_one_finger">You must add at least one fingerprint to use this feature</string>
 </resources>
