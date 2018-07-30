@@ -102,8 +102,8 @@ class EasyFingerPrint(private val activity: Activity?):FingerprintManagerCompat.
                 listern?.onError("ADD <uses-permission android:name=\"android.permission.USE_FINGERPRINT\" /> in your AndroidManifest.xml", CODE_NOT_PERMISSION_BIOMETRIC)
             }
         }else{
-            logError("")
-            listern?.onError("", CODE_ERRO_GREATER_ANDROID_M)
+            logError("Required a Marsmallow android version or higher")
+            listern?.onError("Required a Marsmallow android version or higher", CODE_ERRO_GREATER_ANDROID_M)
         }
 
     }
@@ -124,20 +124,20 @@ class EasyFingerPrint(private val activity: Activity?):FingerprintManagerCompat.
                     as KeyguardManager?
 
             if (fingerprintManager?.isHardwareDetected != true){
-                logError("")
-                listern?.onError("", CODE_ERRO_HARDWARE_NOT_SUPPORTED)
+                logError("Fingerprint scanner not detected on device")
+                listern?.onError("Fingerprint scanner not detected on device", CODE_ERRO_HARDWARE_NOT_SUPPORTED)
                 return
             }
 
             if (!keyguardManager?.isKeyguardSecure!!){
-                logError("")
-                listern?.onError("", CODE_ERRO_NOT_ABLED)
+                logError("Add lock fingerprint to your phone and settings")
+                listern?.onError("Add lock fingerprint to your phone and settings", CODE_ERRO_NOT_ABLED)
                 return
             }
 
             if (!fingerprintManager!!.hasEnrolledFingerprints()){
-                logError("")
-                listern?.onError("", CODE_ERRO_NOT_FINGERS)
+                logError("You must add at least 1 fingerprint to use this feature")
+                listern?.onError("You must add at least 1 fingerprint to use this feature", CODE_ERRO_NOT_FINGERS)
                 return
             }
 
