@@ -298,8 +298,8 @@ class EasyFingerPrint(private val activity: Activity?):FingerprintManagerCompat.
 
     override fun onAuthenticationError(errMsgId: Int, errString: CharSequence?) {
         super.onAuthenticationError(errMsgId, errString)
-        logError("Scan fingerPrint canceled")
-        listern?.onError("Scan fingerPrint canceled", CODE_ERRO_CANCEL)
+        logError(activity?.getString(R.string.text_cancel_finger)!!)
+        listern?.onError(activity.getString(R.string.text_cancel_finger)!!, CODE_ERRO_CANCEL)
     }
 
     override fun onAuthenticationFailed() {

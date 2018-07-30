@@ -10,4 +10,5 @@
     <string name="text_hardware_not_detected">Fingerprint scanner not detected on device</string>
     <string name="text_add_lock_fingerprint">Add lock fingerprint to your phone and settings</string>
     <string name="text_add_one_finger">You must add at least one fingerprint to use this feature</string>
+    <string name="text_cancel_finger">Scan fingerPrint canceled</string>
 </resources>
