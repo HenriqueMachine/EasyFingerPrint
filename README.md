@@ -1,7 +1,7 @@
 # EasyFingerPrint
 
 <p align="center">
-  <img src="https://github.com/HenriqueMachine/EasyFingerPrint/blob/master/images/ezgif.com-video-to-gif.gif" width="300"/></p>
+ <img src="https://github.com/HenriqueMachine/EasyFingerPrint/blob/master/images/ezgif.com-video-to-gif.gif" width="300"/></p>
 
 **EasyFingerPrint** 
 It is a digital reading library that has been designed with the focus of facilitating the implementation of *FingerPrint* in a simple and clear way without taking out its robustness and dynamism, besides following all the *guideline* that the 
@@ -24,7 +24,6 @@ and:
 dependencies {
      compile 'com.github.HenriqueMachine:easyfingerprint:1.0.0'
 }
- 
 ```
 configure:
 
