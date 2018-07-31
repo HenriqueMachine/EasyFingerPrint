@@ -7,6 +7,5 @@ It is a digital reading library that has been designed with the focus of facilit
 
 ***#FingerPrint / #MaterialDesign / #MakeItEasy***
 
-<center>
 <a href="https://imgflip.com/gif/2f0675"><img src="https://i.imgflip.com/2f0675.gif" title="made at imgflip.com"/></a>
-</center>
+
