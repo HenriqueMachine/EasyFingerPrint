@@ -3,7 +3,7 @@
 **EasyFingerPrint** 
 It is a digital reading library that has been designed with the focus of facilitating the implementation of *FingerPrint* in a simple and clear way without taking out its robustness and dynamism, besides following all the *guideline* that the 
 [Material Design](https://material.io/design/platform-guidance/android-fingerprint.html) provides.
-**EasyFingerPrint** already comes with an XML file ready and fully customizable.<br>
+**EasyFingerPrint** already comes with a layout file ready and fully customizable.<br>
 
 ***#FingerPrint / #MaterialDesign / #MakeItEasy***
 
