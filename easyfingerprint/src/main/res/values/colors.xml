@@ -2,4 +2,5 @@
 <resources>
     <color name="color_text">#5f6368</color>
     <color name="color_error">#d32f2f</color>
+    <color name="color_default">#3F51B5</color>
 </resources>
