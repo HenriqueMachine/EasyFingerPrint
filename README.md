@@ -26,7 +26,7 @@ and:
 ```gradle
 dependencies {
      implementation "com.android.support:design:{version}"
-     implementation 'com.github.HenriqueMachine:EasyFingerPrint:1.0.0'
+     implementation 'com.github.HenriqueMachine:EasyFingerPrint:1.0.1'
 }
 ```
 configure:
