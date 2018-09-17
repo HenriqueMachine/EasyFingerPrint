@@ -11,6 +11,9 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_button"
+        android:text="Scan"
+        android:textColor="@android:color/white"/>
 
 </RelativeLayout>
