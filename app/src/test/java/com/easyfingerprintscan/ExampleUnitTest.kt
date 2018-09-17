@@ -1,4 +1,4 @@
-package com.fingerprint
+package com.easyfingerprintscan
 
 import org.junit.Test
 
