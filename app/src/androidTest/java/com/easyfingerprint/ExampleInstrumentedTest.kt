@@ -1,4 +1,4 @@
-package com.easyfingerprintscan
+package com.easyfingerprint
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
