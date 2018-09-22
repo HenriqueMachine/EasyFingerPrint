@@ -1,8 +1,8 @@
 # EasyFingerPrint
-[! [Arsenal Android] (https://img.shields.io/badge/Android%20Arsenal-EasyFingerPrint-green.svg?style=flat)] (https://android-arsenal.com/details/1/7136 )
 [![](https://jitpack.io/v/HenriqueMachine/EasyFingerPrint.svg)](https://jitpack.io/#HenriqueMachine/EasyFingerPrint)
 [![](https://img.shields.io/badge/API-19%2B-brightgreen.svg?style=flat)]()
 [![](https://img.shields.io/hexpm/l/plug.svg)]()
+![Arsenal Android](https://img.shields.io/badge/Android%20Arsenal-EasyFingerPrint-green.svg?style=flat)
 
 <p align="center">
  <img src="https://github.com/HenriqueMachine/EasyFingerPrint/blob/master/images/ezgif.com-video-to-gif.gif" width="300"/></p>
