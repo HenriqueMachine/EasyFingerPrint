@@ -36,9 +36,9 @@ configure:
 EasyFingerPrint(this)
                     .setTittle("Sign in")
                     .setSubTittle("account@account.com.br")
-                    .setDescription("In order to use the Fingerprint sensor we need your authorization first.e")
+                    .setDescription("In order to use the Fingerprint sensor we need your authorization first.")
                     .setColorPrimary(R.color.colorPrimary)
-                    .setIcon(ContextCompat.getDrawable(this,R.mipmap.ic_launcher_round))
+                    .setIcon(ContextCompat.getDrawable(this, R.mipmap.ic_launcher_round))
                     .setListern(object : EasyFingerPrint.ResultFingerPrintListern{
                         override fun onError(mensage: String, code: Int) {
 
@@ -51,11 +51,11 @@ EasyFingerPrint(this)
                                 EasyFingerPrint.CODE_NOT_PERMISSION_BIOMETRIC -> { } // TO DO
                             }
 
-                            Toast.makeText(this@MainActivity,"Error: $mensage / $code",Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@MainActivity, "Error: $mensage / $code", Toast.LENGTH_SHORT).show()
                         }
 
                         override fun onSucess(cryptoObject: FingerprintManagerCompat.CryptoObject?) {
-                            Toast.makeText(this@MainActivity,"Sucess",Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@MainActivity, "Success", Toast.LENGTH_SHORT).show()
                         }
 
                     })
